@@ -1,13 +1,4 @@
-function add (num1,num2) {
-    return num1 + num2;
-}
+const {add, mul} = require('./util.js')
 
-function mul (num1,num2) {
-    return num1 + num2;
-}
-
-//commonJS方式导出
-module.exports = {
-    add,
-    mul
-}
+console.log(add(10,20));
+console.log(mul(30,80));
