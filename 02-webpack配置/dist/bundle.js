@@ -79,6 +79,8 @@ console.log("height = " + __WEBPACK_IMPORTED_MODULE_1__info__["b" /* height */])
 console.log("age = " + __WEBPACK_IMPORTED_MODULE_1__info__["a" /* age */]);
 console.log("name = " + __WEBPACK_IMPORTED_MODULE_1__info__["c" /* name */]);
 
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./css/nomal.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./less/special.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))
 
 /***/ }),
 /* 1 */
