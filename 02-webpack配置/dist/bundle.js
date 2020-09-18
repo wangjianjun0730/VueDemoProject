@@ -81,6 +81,7 @@ console.log("name = " + __WEBPACK_IMPORTED_MODULE_1__info__["c" /* name */]);
 
 __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./css/nomal.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./less/special.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))
+document.write('<h2>你好，李银河!</h2>')
 
 /***/ }),
 /* 1 */
