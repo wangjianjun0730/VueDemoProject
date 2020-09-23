@@ -1,15 +1,17 @@
+const { options } = require('less');
 const path = require('path');
 
 module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath:'dist/'
     },
     module: {
         rules: [
             {
-                test: /\.css$/i,
+                test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
             {
@@ -22,15 +24,34 @@ module.exports = {
                         loader: 'css-loader',
                     },
                     {
-                        loader: 'less-loader',
-                        options: {
-                            lessOptions: {
-                              javascriptEnabled: true
-                            }
-                          }
+                        loader: 'less-loader'
                     },
                 ],
             },
+            {
+                test: /\.(png|jpg|gif|jpeg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            name:'img/[name]_[hash:8].[ext]'
+                        }
+                    }
+                ]
+            },
+            //
+            // {
+            //     test: /\.(png|jpg|gif|jpeg)$/,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options:{
+            //                 name:'img/[name]_[hash:8].[ext]'
+            //             }
+            //         }
+            //     ]
+            // }
         ],
     }
 }
