@@ -40,7 +40,7 @@ module.exports = {
                     }
                 ]
             },
-            //
+            //  配置这里会报错
             // {
             //     test: /\.(png|jpg|gif|jpeg)$/,
             //     use: [
@@ -53,5 +53,12 @@ module.exports = {
             //     ]
             // }
         ],
+    },
+    //这里指定打包版本：1、runtime-only(不可以包含template)  ;  2.runtime-compiler（代码中可以有template）
+    resolve:{
+        //别名
+        alias:{
+            'vue$':'vue/dist/vue.esm.js' //在安装的vue版本中，
+        }
     }
 }
