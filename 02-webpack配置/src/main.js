@@ -10,7 +10,7 @@ import Vue from 'vue'
 // require('./less/special.less');
 import './css/nomal.css'
 import './less/special.less'
-import App from './vue/app'
+import App from './vue/app.vue'
 // const App = {
     
 // }

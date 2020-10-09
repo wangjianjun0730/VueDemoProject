@@ -1,6 +1,10 @@
 <!--  -->
 <template>
-  <div class=""></div>
+   <div>
+        <h1>{{message}}</h1>
+        <button @click='btnClick'>按钮</button>
+        <h2>{{name}}</h2>
+    </div>
 </template>
 
 <script>
@@ -12,14 +16,21 @@ export default {
   components: {},
   data() {
     //这里存放数据
-    return {};
+    return{
+            message: 'hello webpack! => hahahaha',
+            name: 'code-Demo'
+        }
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {},
+  methods: {
+    btnClick(){
+            console.log("点击了btn")
+        }
+  },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
@@ -35,4 +46,8 @@ export default {
 </script>
 <style  scoped>
 /* @import url(); 引入公共css类 */
+div{
+  color: aqua;
+}
+
 </style>

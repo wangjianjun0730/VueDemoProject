@@ -1,5 +1,6 @@
 const { options } = require('less');
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     entry: './src/main.js',
@@ -52,7 +53,15 @@ module.exports = {
             //         }
             //     ]
             // }
-        ],
+            {
+                test:/\.vue$/,
+                use:[
+                    {
+                        loader:'vue-loader'
+                    }
+                ]
+            }
+        ]
     },
     //这里指定打包版本：1、runtime-only(不可以包含template)  ;  2.runtime-compiler（代码中可以有template）
     resolve:{
@@ -60,5 +69,8 @@ module.exports = {
         alias:{
             'vue$':'vue/dist/vue.esm.js' //在安装的vue版本中
         }
-    }
+    },
+    plugins:[
+        new VueLoaderPlugin()
+    ]
 }
