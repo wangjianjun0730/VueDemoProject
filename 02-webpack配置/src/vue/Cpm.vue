@@ -1,6 +1,9 @@
 <!--  -->
 <template>
-  <div class=""></div>
+  <div>
+      <h1>新组建的title</h1>
+      <button @click="btnClick">新组建button</button>
+  </div>
 </template>
 
 <script>
@@ -19,7 +22,11 @@ export default {
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {},
+  methods: {
+      btnClick(){
+          console.log("=======> 新button");
+      }
+  },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
@@ -35,4 +42,8 @@ export default {
 </script>
 <style  scoped>
 /* @import url(); 引入公共css类 */
+div{
+    color: orange;
+    font-size: 100px;
+}
 </style>
