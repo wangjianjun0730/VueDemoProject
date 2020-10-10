@@ -21,7 +21,7 @@ export default {
   data() {
     //这里存放数据
     return{
-            message: 'hello webpack! => hahahaha',
+            message: 'hello webpack! => hahahaha =======.woqu ',
             name: 'code-Demo'
         }
   },

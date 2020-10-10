@@ -1,13 +1,16 @@
 const { options } = require('less');
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const webpack = require('webpack')
+const HtmlWebpackPlugin= require('html-webpack-plugin')
+const WebpackServer = require('webpack-dev-server')
 
 module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath:'dist/'
+        // publicPath:'dist/'
     },
     module: {
         rules: [
@@ -72,6 +75,15 @@ module.exports = {
         }
     },
     plugins:[
-        new VueLoaderPlugin()
-    ]
+        new VueLoaderPlugin(),
+        new webpack.BannerPlugin('版权归王建军所有'),
+        new HtmlWebpackPlugin({
+            template:'./index.html'
+        })
+    ],
+    devServer:{
+        contentBase:'./dist',
+        port:'8080',
+        inline:true
+    }
 }
