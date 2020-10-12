@@ -33,6 +33,7 @@ export default {
   methods: {
     btnClick(){
             console.log("点击了btn")
+            console.log("========>" + parseInt(window.Math.random() * 10000,10));
         }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
