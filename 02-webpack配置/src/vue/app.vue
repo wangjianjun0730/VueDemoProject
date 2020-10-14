@@ -1,29 +1,29 @@
 <!--  -->
 <template>
-   <div>
-        <h1>{{message}}</h1>
-        <button @click='btnClick'>按钮</button>
-        <h2>{{name}}</h2>
-        <cpm/>
-    </div>
+  <div>
+    <h1>{{ message }}</h1>
+    <button @click="btnClick">按钮</button>
+    <h2>{{ name }}</h2>
+    <cpm />
+  </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-import cpm from './Cpm'
+import cpm from "./Cpm";
 
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {
-    cpm
+    cpm,
   },
   data() {
     //这里存放数据
-    return{
-            message: 'hello webpack! => hahahaha =======.woqu ',
-            name: 'code-Demo'
-        }
+    return {
+      message: "hello webpack! => hahahaha =======.woqu ",
+      name: "code-Demo",
+    };
   },
   //监听属性 类似于data概念
   computed: {},
@@ -31,10 +31,10 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    btnClick(){
-            console.log("点击了btn")
-            console.log("========>" + parseInt(window.Math.random() * 10000,10));
-        }
+    btnClick() {
+      console.log("点击了btn");
+      console.log("========>" + parseInt(window.Math.random() * 10000, 10));
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
@@ -51,8 +51,7 @@ export default {
 </script>
 <style  scoped>
 /* @import url(); 引入公共css类 */
-div{
+div {
   color: aqua;
 }
-
 </style>

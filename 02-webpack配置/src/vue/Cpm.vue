@@ -44,6 +44,6 @@ export default {
 /* @import url(); 引入公共css类 */
 div{
     color: orange;
-    font-size: 100px;
+    font-size: 50px;
 }
 </style>
