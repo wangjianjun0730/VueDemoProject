@@ -11,6 +11,7 @@ import Vue from 'vue'
 import './css/nomal.css'
 import './less/special.less'
 import App from './vue/app.vue'
+
 // const App = {
     
 // }

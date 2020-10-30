@@ -8,40 +8,41 @@
   </div> -->
 
   <div class="game">
-    <h2>打地鼠游戏</h2>
-    <div class="wraper">
+    <!-- <h2>打地鼠游戏</h2> -->
+    <!-- <div class="wraper">
       <div class="item" v-for="n in TOTAL" :key="n">
         <div :style="{'visibility': random === n ? 'visible' : 'hidden'}" @click="clickItem">{{n}}号地鼠</div>
       </div>
-    </div>
+    </div> -->
     <div class="scoped">
       <div class="set">
-        <p>设置参数</p>
+        <!-- <p>设置参数</p>
         <p>
           速度： <input type="number" v-model="setSpeed">
         </p>
         <p>
           总数：<input type="number" v-model="setNum">
-        </p>
+        </p> -->
         <p>
-          <button @click="playGame">开始</button>
+          <button @click="clickItem">开始</button>
         </p>
       </div>
-      <div class="count set">
+      <!-- <div class="count set">
         <h3>统计分数面板</h3>
         <h3>总数： {{TOTAL}}</h3>
         <h3>击中： {{clickNum}}</h3>
         <h3>击中率： {{level}}%</h3>
-      </div>
+      </div> -->
     </div>
   </div>
-
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
 // import cpm from "./Cpm";
+import {Decrypt} from './app.js'
+
 
 export default {
   //import引入的组件需要注入到对象中才能使用
@@ -57,55 +58,29 @@ export default {
       setNum: 40, // 绑定设置地洞数量
       setSpeed: 1000, // 绑定设置地鼠出现速度
       speed: 2000, // 地鼠出现速度
-      random: '', // 随机出现的地鼠位置
+      random: "", // 随机出现的地鼠位置
       TOTAL: 40, // 地鼠总数
       count: 0, // 统计总共出现了多少次地鼠同于判断不能大于总数
       clickNum: 0, // 点中地鼠统计
-      timmerId: null
-
+      timmerId: null,
     };
   },
   //监听属性 类似于data概念
   computed: {
-    // 统计打中的地鼠数量
-    level: function () {
-      let num = ((this.clickNum / this.TOTAL) * 100).toFixed(2) || 0;
-      return num;
-    }
+    // // 统计打中的地鼠数量
+    // level: function () {
+    //   let num = ((this.clickNum / this.TOTAL) * 100).toFixed(2) || 0;
+    //   return num;
+    // }
   },
   //监控data中的数据变化
   watch: {},
   //方法集合
   methods: {
-    // btnClick() {
-    //   console.log("点击了btn");
-    //   console.log("========>" + parseInt(window.Math.random() * 10000, 10));
-    // },
-    // 开始游戏
-    playGame () {
-      this.random = '';
-      this.speed = parseInt(this.setSpeed);
-      this.TOTAL = parseInt(this.setNum);
-      clearInterval(this.timmerId);
-      let that = this;
-      this.timmerId = setInterval(() => {
-        that.random = Math.floor(Math.random() * this.TOTAL + 1);
-        that.clickFlag = true; // 开放点击
-        that.count++;
-        console.log( "this.count = " + that.count);
-        console.log("this.TOTAL = " + that.TOTAL);
-        if (that.count >= that.TOTAL) {
-          clearInterval(that.timmerId);
-        }
-      }, that.speed);
+    clickItem() {
+      console.log("点击按钮");
+      Decrypt();
     },
-    // 点击地鼠
-    clickItem () {
-      if (this.clickFlag) {
-        (this.count < this.TOTAL) && this.clickNum++;
-        this.clickFlag = false;
-      }
-    }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
@@ -177,7 +152,7 @@ export default {
       text-align: center;
       line-height: 40px;
       h3 {
-        font-weight:normal;
+        font-weight: normal;
       }
     }
   }
