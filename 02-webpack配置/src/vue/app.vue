@@ -1,53 +1,24 @@
 <!--  -->
 <template>
-  <!-- <div>
+  <div>
     <h1>{{ message }}</h1>
     <button @click="btnClick">按钮</button>
     <h2>{{ name }}</h2>
     <cpm />
-  </div> -->
-
-  <div class="game">
-    <!-- <h2>打地鼠游戏</h2> -->
-    <!-- <div class="wraper">
-      <div class="item" v-for="n in TOTAL" :key="n">
-        <div :style="{'visibility': random === n ? 'visible' : 'hidden'}" @click="clickItem">{{n}}号地鼠</div>
-      </div>
-    </div> -->
-    <div class="scoped">
-      <div class="set">
-        <!-- <p>设置参数</p>
-        <p>
-          速度： <input type="number" v-model="setSpeed">
-        </p>
-        <p>
-          总数：<input type="number" v-model="setNum">
-        </p> -->
-        <p>
-          <button @click="clickItem">开始</button>
-        </p>
-      </div>
-      <!-- <div class="count set">
-        <h3>统计分数面板</h3>
-        <h3>总数： {{TOTAL}}</h3>
-        <h3>击中： {{clickNum}}</h3>
-        <h3>击中率： {{level}}%</h3>
-      </div> -->
-    </div>
   </div>
 </template>
 
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-// import cpm from "./Cpm";
+import cpm from "./Cpm";
 import {Decrypt} from './app.js'
 
 
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {
-    // cpm,
+    cpm,
   },
   data() {
     //这里存放数据

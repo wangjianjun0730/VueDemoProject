@@ -3,12 +3,12 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const webpack = require('webpack')
 const HtmlWebpackPlugin= require('html-webpack-plugin')
-const WebpackServer = require('webpack-dev-server')
+// const WebpackServer = require('webpack-dev-server')
 
 module.exports = {
     entry: './src/main.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, './dist'),
         filename: 'bundle.js',
         // publicPath:'dist/'
     },
@@ -44,18 +44,6 @@ module.exports = {
                     }
                 ]
             },
-            //  配置这里会报错
-            // {
-            //     test: /\.(png|jpg|gif|jpeg)$/,
-            //     use: [
-            //         {
-            //             loader: 'file-loader',
-            //             options:{
-            //                 name:'img/[name]_[hash:8].[ext]'
-            //             }
-            //         }
-            //     ]
-            // }
             {
                 test:/\.vue$/,
                 use:[
@@ -80,10 +68,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template:'./index.html'
         })
-    ],
-    devServer:{
-        contentBase:'./dist',
-        port:'8080',
-        inline:true
-    }
+    ]
+    // ,
+    // devServer:{
+    //     contentBase:'./dist',
+    //     port:'8080', //可以不指定，不指定的话就是默认8080端口
+    //     inline:true
+    // }
 }
